@@ -1,14 +1,10 @@
 const express = require("express");
+const router = require("./router/auth-router");
 
 const app = express();
 const port = 3000;
 
-app.get("/", (req, res) => {
-    res.status(200).send("Hello Hemant");
-});
-app.get("/register", (req, res) => {
-    res.status(200).send("Register Here");
-});
+app.use("/api/auth", router);
 
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
